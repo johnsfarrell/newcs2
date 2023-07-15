@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="CS2 is a computer science course at Brown University for non-concentrators.">
-    <meta name="author" content="Lily George">
+    <meta name="author" content="CS2 TAs">
     <title>CS2 | The Digital World</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- awning -->
     <div class="awning desktop-only" onclick="showNavbar()">
         <ul>
             <li></li>
@@ -39,7 +37,6 @@
         </ul>
     </div>
 
-    <!-- DESKTOP navbar -->
     <nav class="desktop-only" id="navbar">
         <a class="button" href="#top"><button class="static">CS2, the digital world</button></a>
         <ul>
@@ -61,11 +58,10 @@
         </ul>
     </nav>
 
-    <!-- MOBILE navbar -->
     <nav class="mobile-only navbar">
         <div class="nav-header">
             <a class="button" href="#top"><button>CS2, the digital world</button></a>
-            <button class=" nb-toggle">&#9776;</button>
+            <button onclick="toggleMobileNavbarDropdown()" class="nb-toggle">&#9776;</button>
         </div>
         <ul class="navbar-nav">
             <li>
@@ -95,17 +91,15 @@
         </ul>
     </nav>
 
-    <!-- navbar directions -->
     <p class="desktop-only" id="navbar-assistance">
         press <kbd>T</kbd> to toggle navbar
     </p>
 
-    <!-- cover page -->
     <div class="cover" id="top">
         <div class="cover-container">
-            <p>welcome to</p>
+            <p><a class="button" href="#top">welcome to</a></p>
             <h1><a class="button" href="#top">CS2</a></h1>
-            <p>the digital world 🍦</p>
+            <p><a class="button" href="#top">the digital world 🍦</a></p>
         </div>
         <div class="desktop-only" id="navbar-cover">
             <ul>
@@ -126,13 +120,15 @@
                 </li>
             </ul>
         </div>
+        <div class="corner desktop-only"></div>
     </div>
 
     <div class="divider"></div>
 
     <div class="help" id="help">
-        <h2>
-            <a class="button" href="#help">helpful links</a>
+        <h2 class="sign">
+            <div class="hanger"></div>
+            <a class="button sign" href="#help">resources</a>
         </h2>
         <div class="contact">
             <blockquote>
@@ -151,7 +147,6 @@
                 <a href="#staff">profiles 👇</a>
                 <p>meet all the tas</p>
             </blockquote>
-
         </div>
         <div class="links">
             <ul>
@@ -187,15 +182,18 @@
     <div class="divider"></div>
 
     <div class="hours" id="hours">
-        <h2><a class="button" href="#hours">hours</a></h2>
+        <h2 class="sign">
+            <div class="hanger"></div>
+            <a class="button sign" href="#hours">hours</a>
+        </h2>
         <blockquote>
             <p>More information regarding TA hours and labs will be posted during the Fall 2023 semester.</p>
 
             <p>Labs will be held Monday-Thursday approximately every other week on <a
                     href="https://gather.town/app/klFp9Y8xtVoXXeSY/cs0020-F21"> Gather Town</a>.</p>
 
-            <p>Office hours and lab checkoff hours will be through Zoom. During hours there will be a queue created on
-                <a href="https://hours.cs.brown.edu/login">hours</a>.
+            <p>Office hours and lab checkoff hours will be through Zoom. During hours there will be a queue created
+                on <a href="https://hours.cs.brown.edu/login">hours</a>.
             </p>
         </blockquote>
         <iframe
@@ -205,14 +203,11 @@
     <div class="divider"></div>
 
     <div class="assignments" id="assignments">
-        <h2><a class="button" href="#assignments">labs</a></h2>
+        <h2 class="sign">
+            <div class="hanger"></div>
+            <a class="button sign" href="#assignments">labs</a>
+        </h2>
         <table class="table">
-            <colgroup>
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-            </colgroup>
             <thead>
                 <tr>
                     <th>Title</th>
@@ -273,14 +268,10 @@
             </tbody>
         </table>
         <br>
-        <h2><a class="button" href="#assignments">assignments</a></h2>
+        <h2>
+            <a class="button sign" href="#assignments">assignments</a>
+        </h2>
         <table class="table">
-            <colgroup>
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-                <col span="1" style="width: 25%">
-            </colgroup>
             <thead>
                 <tr>
                     <th>Title</th>
@@ -345,14 +336,11 @@
     <div class="divider"></div>
 
     <div class="lectures" id="lectures">
-        <h2><a class="button" href="#lectures">lectures</a></h2>
+        <h2 class="sign">
+            <div class="hanger"></div>
+            <a class="button sign" href="#lectures">lectures</a>
+        </h2>
         <table class="table">
-            <colgroup>
-                <col span="1" style="width: 15%">
-                <col span="1" style="width: 35%">
-                <col span="1" style="width: 15%">
-                <col span="1" style="width: 35%">
-            </colgroup>
             <thead>
                 <tr>
                     <th>Date</th>
@@ -363,7 +351,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <!-- COMMENT OUT ALL LECTURES TO UNCOMMENT DURING SEM -->
                     <td>09/08/22</td>
                     <td>Introduction to the Digital World</td>
                     <td><a target="_blank"
@@ -588,10 +575,13 @@
     <div class="divider"></div>
 
     <div class="staff" id="staff">
-        <h2><a class="button" href="#staff">staff</a></h2>
+        <h2 class="sign">
+            <div class="hanger"></div>
+            <a class="button sign" href="#staff">staff</a>
+        </h2>
         <div>
             <div class="profile-container">
-                <div class="single-profile">
+                <div class="single-profile reverse">
                     <div class="picture">
                         <img class="profile" src="img/staff/don_stanford.jpg" alt="don_stanford" />
                         <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
@@ -604,7 +594,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -637,7 +630,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -676,7 +672,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -709,7 +708,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -742,7 +744,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -774,7 +779,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -809,7 +817,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
         <div>
             <div class="profile-container">
@@ -829,7 +840,10 @@
                     </div>
                 </div>
             </div>
-            <img class="shelf" src="img/shelf.png" alt="shelf" />
+            <div class="shelf">
+                <div class="nich-left"></div>
+                <div class="nich-right"></div>
+            </div>
         </div>
     </div>
 
@@ -845,112 +859,13 @@
             <br>
             press <kbd>CTRL/CMD</kbd> <kbd>+</kbd> <kbd>G</kbd> for a super secret surprise
         </p>
+        <span></span>
         <p>
-            &nbsp;
-        </p>
-        <p>
-            🍦 by <a href="mailto:john_farrell@brown.edu">john</a> and <a href="mailto:jennifer_chen@brown.edu">jenn
-            </a>
+            🍦 by <a href="mailto:john_farrell@brown.edu">john</a> and <a href="mailto:jennifer_chen@brown.edu">jenn</a>
         </p>
     </footer>
 
-    <!-- scripts -->
-    <script>
-        let timeout = null;
-        let hoverEnabled = true;
-        let distance = "-10.6vw";
-        const buttons = document.querySelectorAll('button');
-        const dividers = document.querySelectorAll('.divider');
-        const cover = document.querySelectorAll('.cover-container')[0];
-        const navbarAssistance = document.getElementById("navbar-assistance");
-        const awning = document.querySelector(".awning");
-        const navbar = document.getElementById("navbar");
-        var coverContainer = document.querySelector('.cover-container');
-
-        function initialCalls() {
-            setTimeout(() => {
-                cover.style.left = "0";
-                navbarAssistance.style.right = "1em";
-                handleScroll();
-            }, 50);
-        }
-
-        function showNavbar() {
-            awning.style.top = distance;
-            navbarAssistance.style.right = "-25vw";
-            navbar.style.top = "0";
-            setTimeout(() => {
-                handleScroll()
-            }, 260);
-        }
-
-        function hideNavbar() {
-            navbar.style.top = distance;
-            navbarAssistance.style.right = "1em";
-            awning.style.top = "0";
-            setTimeout(() => {
-                handleScroll()
-            }, 260);
-        }
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "n" || event.key === "t") {
-                var isNavbarVisible = awning.style.top === distance;
-                if (isNavbarVisible) {
-                    hideNavbar();
-                } else {
-                    showNavbar();
-                }
-            }
-            else if (event.key === "u") {
-                window.location.href = "#top";
-            }
-            else if (event.key === "g" && (event.ctrlKey || event.metaKey)) {
-                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            }
-        });
-
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function handleScroll() {
-            let delay = 0;
-            let delayInterval = 40;
-            buttons.forEach((button, index) => {
-                const isButtonVisible = isElementInViewport(button);
-                button.classList.toggle('visible', isButtonVisible);
-            });
-            dividers.forEach((divider, index) => {
-                const isDividerVisible = isElementInViewport(divider);
-                divider.classList.toggle('visible', isDividerVisible);
-            });
-
-            var coverContainerHeight = coverContainer.offsetHeight;
-            var scrollPoint = window.scrollY + window.innerHeight;
-            if (window.scrollY > (coverContainer.offsetTop + coverContainerHeight / 2)) {
-                coverContainer.style.left = '-100vw';
-            }
-            else {
-                coverContainer.style.left = '0';
-            }
-        }
-        window.addEventListener('scroll', handleScroll);
-
-        document.querySelector('.nb-toggle').addEventListener('click', function () {
-            document.querySelector('.navbar-nav').classList.toggle('show');
-            document.querySelector('.navbar').classList.toggle('show');
-        });
-
-        initialCalls();
-    </script>
-    <script src="js/staff.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
