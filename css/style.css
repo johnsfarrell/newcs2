@@ -45,18 +45,6 @@ h2 {
   transform: rotate(30deg);
 }
 
-h2.visible:hover {
-  transition: all 0.2s ease;
-  transform: rotate(4deg) translateX(-3px);
-}
-
-h2.visible {
-  left: -1em;
-  opacity: 1;
-  transform: rotate(0deg);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.8);
-}
-
 h2 a {
   color: rgb(51, 51, 51);
   text-decoration: none;
@@ -171,28 +159,14 @@ a:not(.button):focus {
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0.1em;
-  background: linear-gradient(
-    to right,
-    rgb(82, 44, 97) 20%,
-    #774040 40%,
-    rgb(108, 54, 58) 60%,
-    #445798 80%,
-    rgb(82, 44, 97) 100%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 10s linear infinite;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   cursor: default;
   width: fit-content;
 }
 
-@keyframes shine {
-  to {
-    background-position: 200% center;
-  }
+.cover .cover-container a {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
 }
 
 .cover .cover-container h1 {
@@ -688,6 +662,12 @@ footer p {
   .staff .profile-container .single-profile .picture {
     width: 100%;
   }
+
+  h2 {
+    left: 0;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }
 
 /* Media query for small mobile devices */
@@ -731,6 +711,91 @@ footer p {
   }
   li:nth-child(6) button {
     transition-delay: 0.1s;
+  }
+
+  /* sign styling */
+  a.sign {
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    border: 4px solid #deb7b7;
+    box-shadow: -3px 3px 0 rgb(0 0 0 / 7%);
+    transition: box-shadow 0.2s, transform 0.2s;
+    background-color: rgb(250, 250, 250);
+  }
+
+  a.sign:hover {
+    box-shadow: -1px 1px 0 rgb(0 0 0 / 4%);
+  }
+
+  h2.sign {
+    position: relative;
+    margin: 0 0 1em 0;
+  }
+
+  .hanger {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    transition-delay: 0.5s;
+    overflow: hidden;
+  }
+
+  .hanger::before,
+  .hanger::after {
+    content: "";
+    position: absolute;
+    left: calc(-11%);
+    width: 122%;
+    height: 0px;
+    background-color: rgb(224 185 185 / 36%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotate(0deg);
+  }
+
+  .hanger::before {
+    height: 4px;
+    transform: rotate(50deg);
+  }
+
+  .hanger::after {
+    height: 4px;
+    transform: rotate(-50deg);
+  }
+
+  .hours .hanger::before,
+  .hours .hanger::after {
+    left: calc(-4%);
+    width: 108%;
+  }
+
+  .assignments .hanger::before,
+  .assignments .hanger::after {
+    left: calc(-13%);
+    width: 126%;
+  }
+
+  .lectures .hanger::before,
+  .lectures .hanger::after {
+    left: calc(8%);
+    width: 84%;
+  }
+
+  .help .hanger::before,
+  .help .hanger::after {
+    left: calc(14%);
+    width: 72%;
+  }
+
+  h2.visible:hover {
+    transition: all 0.2s ease;
+    transform: rotate(4deg) translateX(-3px);
+  }
+
+  h2.visible {
+    left: -1em;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.8);
   }
 }
 
@@ -795,77 +860,4 @@ footer p {
   border: 0.2em solid rgb(30, 30, 30, 0.3);
   left: 76.5%;
   top: -0.2em;
-}
-
-/* sign styling */
-a.sign {
-  padding: 0.1em 0.5em 0.1em 0.5em;
-  border: 4px solid #deb7b7;
-  box-shadow: -3px 3px 0 rgb(0 0 0 / 7%);
-  transition: box-shadow 0.2s, transform 0.2s;
-  background-color: rgb(250, 250, 250);
-}
-
-a.sign:hover {
-  box-shadow: -1px 1px 0 rgb(0 0 0 / 4%);
-}
-
-h2.sign {
-  position: relative;
-  margin: 0 0 1em 0;
-}
-
-.hanger {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  transition-delay: 0.5s;
-  overflow: hidden;
-}
-
-.hanger::before,
-.hanger::after {
-  content: "";
-  position: absolute;
-  left: calc(-11%);
-  width: 122%;
-  height: 0px;
-  background-color: rgb(224 185 185 / 36%);
-  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
-    height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transform: rotate(0deg);
-}
-
-.hanger::before {
-  height: 4px;
-  transform: rotate(50deg);
-}
-
-.hanger::after {
-  height: 4px;
-  transform: rotate(-50deg);
-}
-
-.hours .hanger::before,
-.hours .hanger::after {
-  left: calc(-4%);
-  width: 108%;
-}
-
-.assignments .hanger::before,
-.assignments .hanger::after {
-  left: calc(-13%);
-  width: 126%;
-}
-
-.lectures .hanger::before,
-.lectures .hanger::after {
-  left: calc(8%);
-  width: 84%;
-}
-
-.help .hanger::before,
-.help .hanger::after {
-  left: calc(14%);
-  width: 72%;
 }

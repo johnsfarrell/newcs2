@@ -56,7 +56,7 @@ function scrollThrottle() {
     throttleTimeout = setTimeout(() => {
       handleScroll();
       throttleTimeout = null;
-    }, 100);
+    }, 150);
   }
 }
 
