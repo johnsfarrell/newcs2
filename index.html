@@ -8,11 +8,15 @@
     <meta name="description" content="CS2 is a computer science course at Brown University for non-concentrators.">
     <meta name="author" content="CS2 TAs">
     <title>CS2 | The Digital World</title>
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="awning desktop-only" onclick="showNavbar()">
+    <div class="awning desktop-only" onclick="toggleNavbar()">
         <ul>
             <li></li>
             <li></li>
@@ -99,7 +103,7 @@
         <div class="cover-container">
             <p><a class="button" href="#top">welcome to</a></p>
             <h1><a class="button" href="#top">CS2</a></h1>
-            <p><a class="button" href="#top"><u>the digital world 🍦</u></a></p>
+            <p><a class="button" href="#top">the digital world 🍦</a></p>
         </div>
         <div class="desktop-only" id="navbar-cover">
             <ul>
@@ -196,7 +200,7 @@
                 on <a href="https://hours.cs.brown.edu/login">hours</a>.
             </p>
         </blockquote>
-        <iframe
+        <iframe title="calendar" aria-label="calendar"
             src="https://calendar.google.com/calendar/embed?src=c_89r77ksonhucjgbsi9kr8u53vk%40group.calendar.google.com&ctz=America%2FNew_York"></iframe>
     </div>
 
@@ -583,8 +587,8 @@
             <div class="profile-container">
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/don_stanford.jpg" alt="don_stanford" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/don_stanford.jpg" alt="don_stanford" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3 id="don"><a href="mailto:don.stanford@gmail.com">professor stanford</a></h3>
@@ -603,8 +607,8 @@
             <div class="profile-container">
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/tyler_gurth.jpg" alt="tyler_gurth" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/tyler_gurth.jpg" alt="tyler_gurth" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:tyler_gurth@brown.edu">tyler, hta</a></h3>
@@ -617,8 +621,8 @@
                 </div>
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/alana_cho.jpg" alt="alana_cho" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/alana_cho.jpg" alt="alana_cho" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:alana_cho@brown.edu">alana, hta</a></h3>
@@ -649,8 +653,8 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/ze_hua_chen.jpg" alt="ze_hua_chen" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/ze_hua_chen.jpg" alt="ze_hua_chen" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
                 <div class="single-profile">
@@ -667,8 +671,9 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/nicole_sanchez-soto.jpg" alt="nicole_sanchez-soto" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/nicole_sanchez-soto.jpg"
+                            alt="nicole_sanchez-soto" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
             </div>
@@ -681,8 +686,8 @@
             <div class="profile-container">
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/john_farrell.jpg" alt="john_farrell" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/john_farrell.jpg" alt="john_farrell" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:john_farrell@brown.edu">john</a></h3>
@@ -696,8 +701,8 @@
                 </div>
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/zachary_boston.jpg" alt="zachary_boston" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/zachary_boston.jpg" alt="zachary_boston" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:zachary_boston@brown.edu">zachary</a></h3>
@@ -724,8 +729,8 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/chun_lam.jpg" alt="chun_lam" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/chun_lam.jpg" alt="chun_lam" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
                 <div class="single-profile">
@@ -739,8 +744,8 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/brandon_wu.jpg" alt="brandon_wu" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/brandon_wu.jpg" alt="brandon_wu" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
             </div>
@@ -753,8 +758,8 @@
             <div class="profile-container">
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/jennifer_chen.jpg" alt="jennifer_chen" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/jennifer_chen.jpg" alt="jennifer_chen" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:jennifer_chen@brown.edu">jennifer</a></h3>
@@ -765,8 +770,8 @@
                 </div>
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/isha_ponugoti.jpg" alt="isha_ponugoti" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/isha_ponugoti.jpg" alt="isha_ponugoti" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:isha_ponugoti@brown.edu">isha</a></h3>
@@ -797,8 +802,8 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/zahra_naqvi.jpg" alt="zahra_naqvi" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/zahra_naqvi.jpg" alt="zahra_naqvi" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
                 <div class="single-profile">
@@ -812,8 +817,8 @@
                         </p>
                     </div>
                     <div class="picture">
-                        <img class="profile" src="img/staff/chris_chae.jpg" alt="chris_chae" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/chris_chae.jpg" alt="chris_chae" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                 </div>
             </div>
@@ -826,8 +831,8 @@
             <div class="profile-container">
                 <div class="single-profile reverse">
                     <div class="picture">
-                        <img class="profile" src="img/staff/nitin_sreekumar.jpg" alt="nitin_sreekumar" />
-                        <img class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
+                        <img loading="lazy" class="profile" src="img/staff/nitin_sreekumar.jpg" alt="nitin_sreekumar" />
+                        <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
                     <div class="bio">
                         <h3><a href="mailto:nitin_sreekumar@brown.edu">nitin</a></h3>
@@ -865,7 +870,7 @@
         </p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
