@@ -80,13 +80,15 @@ a:not(.button):focus {
   z-index: 100;
   padding: 0.5em 1em 0.5em 1em;
   position: fixed;
-  top: 6em;
+  top: 7em;
   right: -50vw;
   float: right;
-  transition: right 0.3s ease;
+  transition: all 0.2s ease;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 100px;
   backdrop-filter: blur(25px);
+  border: none;
+  box-shadow: none;
 }
 
 #navbar-cover {
@@ -145,6 +147,7 @@ a:not(.button):focus {
 
 .cover .cover-container h1,
 .cover .cover-container p {
+  line-height: 1;
   font-size: 2.5em;
   font-weight: 600;
   margin-top: 0;
@@ -167,6 +170,7 @@ a:not(.button):focus {
 }
 h3:hover,
 .cover .cover-container h1:hover {
+  line-height: 1.1;
   transform: scale(1.1) rotate(-1deg) translateY(4px);
 }
 
@@ -185,8 +189,10 @@ h3:hover,
 
 .awning ul {
   margin: 0;
-  padding: 0;
+  padding: 0 0 2em 0;
   height: 5em;
+  overflow: hidden;
+  width: 210vw;
 }
 
 .awning li {
@@ -252,13 +258,12 @@ h3:hover,
 
 /* mobile navbar styling */
 .navbar {
-  background-color: rgb(255, 82, 82);
+  background-color: transparent;
   padding: 1em;
   position: fixed;
   width: calc(100vw - 2em);
   z-index: 101;
-  border-bottom: 2px solid rgb(0, 0, 0);
-  height: 2.5em;
+  height: 3em;
   top: 0;
 }
 
@@ -270,8 +275,8 @@ h3:hover,
 .navbar-nav {
   height: 0;
   list-style-type: none;
-  margin: 0.5em 0 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 3em 0 0 0;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -287,7 +292,7 @@ h3:hover,
 .navbar-nav.show {
   height: min-content;
   display: flex;
-  top: 0;
+  top: -2em;
 }
 
 .navbar blockquote {
@@ -365,6 +370,9 @@ button {
 button.visible {
   transition: box-shadow 0.2s, transform 0.2s;
 }
+button:focus-visible {
+  outline: none;
+}
 
 button.visible:hover {
   transition: box-shadow 0.2s, transform 0.2s;
@@ -386,16 +394,8 @@ button.visible:active {
 .hours iframe {
   width: 100%;
   height: max(60vh, 600px);
-  border: 1px solid rgb(245, 245, 245);
-  box-shadow: -0.2em 0 0 rgba(0, 0, 0, 0.4);
-  padding: 1em;
   background-color: rgb(255, 255, 255);
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.hours iframe:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 0.4);
+  border: none;
 }
 
 /* quote styling */
@@ -604,6 +604,10 @@ footer p {
     display: block;
   }
 
+  .awning li {
+    width: 10vw;
+  }
+
   .desktop-only {
     display: none;
   }
@@ -649,17 +653,27 @@ footer p {
   }
   .staff .profile-container .single-profile.reverse {
     flex-direction: column;
+    align-items: center;
   }
 
   .staff .profile-container .single-profile .bio,
   .staff .profile-container .single-profile .picture {
     width: 100%;
+    font-size: 0.75em;
   }
 
   h2 {
     left: 0;
     opacity: 1;
     transform: rotate(0deg);
+  }
+
+  .mobile-center {
+    width: 100%;
+    font-size: 0.75em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -673,6 +687,18 @@ footer p {
 
 /* Media query for desktop devices */
 @media (min-width: 768px) {
+  .hours iframe {
+    border: 1px solid rgb(245, 245, 245);
+    box-shadow: -0.2em 0 0 rgba(0, 0, 0, 0.4);
+    padding: 1em;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .hours iframe:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 0.4);
+  }
+
   /* enable button animations */
   button:not(.static) {
     transform: translateX(-50px);

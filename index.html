@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="awning desktop-only" onclick="toggleNavbar()">
+    <div class="awning" onclick="toggleNavbar()">
         <ul>
             <li></li>
             <li></li>
@@ -95,15 +95,15 @@
         </ul>
     </nav>
 
-    <p class="desktop-only" id="navbar-assistance">
+    <button class="desktop-only" id="navbar-assistance" onclick="toggleNavbar()">
         press <kbd>T</kbd> to toggle navbar
-    </p>
+    </button>
 
     <div class="cover" id="top">
         <div class="cover-container">
             <p><a class="button" href="#top">welcome to</a></p>
             <h1><a class="button" href="#top">CS2</a></h1>
-            <p><a class="button" href="#top">the digital world 🍦</a></p>
+            <p><a class="button" href="#top">the digital world</a></p>
         </div>
         <div class="desktop-only" id="navbar-cover">
             <ul>
@@ -590,7 +590,7 @@
                         <img loading="lazy" class="profile" src="img/staff/don_stanford.jpg" alt="don_stanford" />
                         <img loading="lazy" class="ice-cream" src="img/ice-cream.jpeg" alt="ice_cream" />
                     </div>
-                    <div class="bio">
+                    <div class="bio mobile-center">
                         <h3 id="don"><a href="mailto:don.stanford@gmail.com">professor stanford</a></h3>
                         <p>
                             <a target="_blank" href="files/DonProfile.pdf">see full biography</a>
@@ -870,7 +870,7 @@
         </p>
     </footer>
 
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
