@@ -8,6 +8,7 @@ const coverContainer = document.querySelector(".cover-container");
 const corner = document.querySelector(".cover .corner");
 const navbarNav = document.querySelector(".navbar-nav");
 const h2Headings = document.querySelectorAll("h2");
+const vis = [...buttons, ...dividers, ...h2Headings, cover];
 
 function toggleStyle(element, property, value1, value2) {
   element.style[property] =
@@ -27,27 +28,28 @@ function toggleNavbar() {
   setTimeout(handleScroll, 160);
 }
 
+function handleScroll() {
+  vis.forEach(toggleVisible);
+  blurCorner();
+}
+
+function blurCorner() {
+  corner.style.filter = `blur(${Math.min(
+    4,
+    document.documentElement.scrollTop / 50
+  )}px)`;
+}
+
+function toggleVisible(el) {
+  el.classList.toggle("visible", isElementInViewport(el));
+}
+
 function isElementInViewport(el) {
   const { top, bottom } = el.getBoundingClientRect();
   return (
     top >= 0 &&
     bottom <= (window.innerHeight || document.documentElement.clientHeight)
   );
-}
-
-function handleScroll() {
-  [buttons, dividers, h2Headings].forEach((elements) =>
-    elements.forEach((element) =>
-      element.classList.toggle("visible", isElementInViewport(element))
-    )
-  );
-  const coverContainerHeight = coverContainer.offsetHeight;
-  coverContainer.style.left =
-    window.scrollY > coverContainer.offsetTop + coverContainerHeight / 3
-      ? "-100vw"
-      : "0";
-  const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-  corner.style.filter = `blur(${Math.min(4, scrollPos / 50)}px)`;
 }
 
 let throttleTimeout;
@@ -67,7 +69,7 @@ document.addEventListener("keydown", (event) => {
   if (key === "n" || key === "t") toggleNavbar();
   else if (key === "u") window.location.href = "#top";
   else if (key === "g" && (ctrlKey || metaKey))
-    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
 });
 
 (function () {
