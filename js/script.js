@@ -8,7 +8,8 @@ const coverContainer = document.querySelector(".cover-container");
 const corner = document.querySelector(".cover .corner");
 const navbarNav = document.querySelector(".navbar-nav");
 const h2Headings = document.querySelectorAll("h2");
-const vis = [...buttons, ...dividers, ...h2Headings, cover];
+const scoops = document.querySelectorAll(".scoops");
+const vis = [...buttons, ...dividers, ...h2Headings, cover, ...scoops];
 
 function toggleStyle(element, property, value1, value2) {
   element.style[property] =
