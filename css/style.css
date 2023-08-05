@@ -581,6 +581,7 @@ table tr:hover {
   list-style: none;
   flex-direction: column;
   align-items: center;
+  -webkit-backface-visibility: hidden;
   transform: rotate(3deg);
   top: 0.5em;
   position: relative;
@@ -608,6 +609,60 @@ table tr:hover {
   top: 0em;
 }
 
+.scoops.chocolate li {
+  background-color: #6c0c27;
+  border-color: #5d001a;
+}
+
+.scoops.chocolate li:nth-child(1) {
+  background-color: #5d001a;
+}
+
+.scoops.strawberry li {
+  background-color: #f7c8c8;
+  border-color: #e8b7b7;
+}
+
+.scoops.strawberry li:nth-child(1) {
+  background-color: #e8b7b7;
+}
+
+.scoops.mint li {
+  background-color: #b7e8b7;
+  border-color: #a3d8a3;
+}
+
+.scoops.mint li:nth-child(1) {
+  background-color: #a3d8a3;
+}
+
+.scoops.lemon li {
+  background-color: #f7f7c8;
+  border-color: #e8e8b7;
+}
+
+.scoops.lemon li:nth-child(1) {
+  background-color: #e8e8b7;
+}
+
+.scoops.grape li {
+  background-color: #c8b7e8;
+  border-color: #b7a3d8;
+}
+
+.scoops.grape li:nth-child(1) {
+  background-color: #b7a3d8;
+}
+
+.scoops.cotton-candy li {
+  background-color: #f7c8f7;
+  border-color: #e8b7e8;
+}
+
+.scoops.cotton-candy li:nth-child(1) {
+  background-color: #e8b7e8;
+}
+
 .scoops li:nth-child(1) {
   clip-path: polygon(76% 0%, 76% 0%, 0% 100%, 100% 100%);
   background-color: #eee8e8;
@@ -624,7 +679,7 @@ table tr:hover {
 
 .scoops.visible li {
   top: 0;
-  border: #eee8e8 solid 0.2em;
+  border-width: 0.2em;
 }
 
 .scoops.visible li:nth-child(1) {
