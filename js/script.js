@@ -77,7 +77,7 @@ function eat(i) {
   Array.from(scoops[i].children[0].children).forEach((l) => {
     l.style.top = `${
       parseFloat(
-        l.style.top ? (l.style.top === "6em" ? "-1em" : l.style.top) : "0em"
+        l.style.top ? (l.style.top === "5em" ? "-1em" : l.style.top) : "0em"
       ) + 1
     }em`;
   });
