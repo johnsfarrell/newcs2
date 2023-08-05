@@ -53,12 +53,12 @@ function isElementInViewport(el) {
   );
 }
 
-let throttleTimeout;
+let scrollThrottleTimeout;
 function scrollThrottle() {
-  if (!throttleTimeout) {
-    throttleTimeout = setTimeout(() => {
+  if (!scrollThrottleTimeout) {
+    scrollThrottleTimeout = setTimeout(() => {
       handleScroll();
-      throttleTimeout = null;
+      scrollThrottleTimeout = null;
     }, 150);
   }
 }
@@ -72,6 +72,16 @@ document.addEventListener("keydown", (event) => {
   else if (key === "g" && (ctrlKey || metaKey))
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
 });
+
+function eat(i) {
+  Array.from(scoops[i].children[0].children).forEach((l) => {
+    l.style.top = `${
+      parseFloat(
+        l.style.top ? (l.style.top === "6em" ? "-1em" : l.style.top) : "0em"
+      ) + 1
+    }em`;
+  });
+}
 
 (function () {
   setTimeout(() => {
