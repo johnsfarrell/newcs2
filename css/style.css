@@ -728,6 +728,14 @@ footer p {
     margin: 0;
   }
 
+  .spoon {
+    height: 5em;
+  }
+
+  .spoon:hover {
+    height: 4.5em;
+  }
+
   .scoops li {
     top: 0;
     border: #eee8e8 solid 0.2em;
