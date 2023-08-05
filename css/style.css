@@ -582,6 +582,7 @@ table tr:hover {
   flex-direction: column;
   align-items: center;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transform: rotate(3deg);
   top: 0.5em;
   position: relative;
