@@ -8,7 +8,8 @@ const coverContainer = document.querySelector(".cover-container");
 const corner = document.querySelector(".cover .corner");
 const navbarNav = document.querySelector(".navbar-nav");
 const h2Headings = document.querySelectorAll("h2");
-const vis = [...buttons, ...dividers, ...h2Headings, cover];
+const scoops = document.querySelectorAll(".scoops");
+const vis = [...buttons, ...dividers, ...h2Headings, cover, ...scoops];
 
 function toggleStyle(element, property, value1, value2) {
   element.style[property] =
@@ -29,7 +30,7 @@ function toggleNavbar() {
 }
 
 function handleScroll() {
-  vis.forEach(toggleVisible);
+  vis.forEach(makeVisible);
   blurCorner();
 }
 
@@ -38,6 +39,11 @@ function blurCorner() {
     4,
     document.documentElement.scrollTop / 50
   )}px)`;
+}
+
+function makeVisible(el) {
+  if (el.classList.contains("visible")) return;
+  toggleVisible(el);
 }
 
 function toggleVisible(el) {
@@ -52,12 +58,12 @@ function isElementInViewport(el) {
   );
 }
 
-let throttleTimeout;
+let scrollThrottleTimeout;
 function scrollThrottle() {
-  if (!throttleTimeout) {
-    throttleTimeout = setTimeout(() => {
+  if (!scrollThrottleTimeout) {
+    scrollThrottleTimeout = setTimeout(() => {
       handleScroll();
-      throttleTimeout = null;
+      scrollThrottleTimeout = null;
     }, 150);
   }
 }
@@ -71,6 +77,16 @@ document.addEventListener("keydown", (event) => {
   else if (key === "g" && (ctrlKey || metaKey))
     window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
 });
+
+function eat(i) {
+  Array.from(scoops[i].children[0].children).forEach((l) => {
+    l.style.top = `${
+      parseFloat(
+        l.style.top ? (l.style.top === "5em" ? "-1em" : l.style.top) : "0em"
+      ) + 1
+    }em`;
+  });
+}
 
 (function () {
   setTimeout(() => {
