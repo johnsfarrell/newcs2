@@ -30,7 +30,7 @@ function toggleNavbar() {
 }
 
 function handleScroll() {
-  vis.forEach(toggleVisible);
+  vis.forEach(makeVisible);
   blurCorner();
 }
 
@@ -39,6 +39,11 @@ function blurCorner() {
     4,
     document.documentElement.scrollTop / 50
   )}px)`;
+}
+
+function makeVisible(el) {
+  if (el.classList.contains("visible")) return;
+  toggleVisible(el);
 }
 
 function toggleVisible(el) {
